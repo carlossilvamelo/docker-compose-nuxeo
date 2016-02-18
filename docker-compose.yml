@@ -1,5 +1,5 @@
 nuxeo:
-  image: fxleb/nuxeo-keendo:7.10
+  build: nuxeo
   hostname: nuxeo
   ports:
     - 8081:8080
