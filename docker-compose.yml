@@ -19,7 +19,7 @@ nuxeo:
 
   volumes:
     - /data-volume/nuxeo-no-developper/nuxeo:/var/lib/nuxeo/data
-    - ./deploy:/deploy:ro
+    - ./deploy/nuxeo:/deploy:ro
 
 redis:
   image: redis:3.0.4
@@ -47,5 +47,8 @@ es2:
 db:
   build: postgresql
   hostname: db
+  ports:
+    - 5433:5432
   volumes:
     - /data-volume/nuxeo-no-developper/postgres:/var/lib/postgresql/data/
+    - ./deploy/postgres:/deploy:rw
